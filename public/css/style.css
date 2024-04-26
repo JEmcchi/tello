@@ -1,0 +1,153 @@
+/* hamburger nav */
+
+#checkbox {
+    display: none;
+  }
+  
+  .toggle {
+    position: absolute;
+    width: 40px;
+    cursor: pointer;
+    display: block;
+    height: calc(4px * 3 + 11px * 2);
+  }
+  
+  .bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: calc(4px / 2);
+    background: #197219d0;
+    color: inherit;
+    opacity: 1;
+    transition: none 0.35s cubic-bezier(.5,-0.35,.35,1.5) 0s;
+  }
+  
+  /***** Tornado Animation *****/
+  
+  .bar--top {
+    bottom: calc(50% + 11px + 4px/ 2);
+    transition-property: bottom,transform;
+    transition-delay: calc(0s + 0.35s) * .6;
+  }
+  
+  .bar--middle {
+    top: calc(50% - 4px/ 2);
+    transition-property: opacity,transform;
+    transition-delay: calc(0s + 0.35s * .3);
+  }
+  
+  .bar--bottom {
+    top: calc(50% + 11px + 4px/ 2);
+    transition-property: top,transform;
+    transition-delay: 0s;
+  }
+  
+  #checkbox:checked + .toggle .bar--top {
+    transform: rotate(-135deg);
+    transition-delay: 0s;
+    bottom: calc(50% - 4px/ 2);
+  }
+  
+  #checkbox:checked + .toggle .bar--middle {
+    opacity: 0;
+    transform: rotate(-135deg);
+    transition-delay: calc(0s + 0.35s * .3);
+  }
+  
+  #checkbox:checked + .toggle .bar--bottom {
+    top: calc(50% - 4px/ 2);
+    transform: rotate(-225deg);
+    transition-delay: calc(0s + 0.35s * .6);
+  }
+
+  /*  */
+
+  /* form button */
+
+  .book-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    background-image: linear-gradient(to top, #d8dbd8 0%, #fff 80%, #FDFDFD 100%);
+    border-radius: 30px;
+    border: 1px solid #90928f;
+    transition: all 0.2s ease;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #686968;
+    text-shadow: 0 1px #fff;
+    box-shadow: none;
+  }
+  
+  .book-button:hover {
+    box-shadow: 0 4px 3px 1px #fcfcfc, 0 6px 8px #d6d9d6, 0 -4px 4px #bce7be, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #ced1ce;
+  }
+  
+  .book-button:active {
+    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #ced1ce, 0 -4px 4px #ced1ce, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #74e487;
+  }
+  
+  /* .book-button:focus {
+    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #72d672, 0 -4px 4px #7dc97d, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #89d68f, inset 0 0 30px #aaa;
+  } */
+
+  /* bottom card */
+  .card {
+    width: 230px;
+    height: 120px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    background: transparent;
+    position: relative;
+    padding: 1.8rem;
+    border-top: 2px solid #c3c6ce;
+    border-left: 2px solid #c3c6ce;
+    border-right: 2px solid #c3c6ce;
+    -webkit-transition: 0.5s ease-out;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    border-color: rgba(0, 128, 0, 0.767);
+    -webkit-box-shadow: 10px 5px 18px 0 rgba(255, 255, 255, 0.877);
+    box-shadow: 10px 5px 18px 0 rgba(255, 255, 255, 0.877);
+    transform: scale(0.9.1);
+    box-shadow: 0 0 15px #18ff1085;
+  }
+  
+  .card:hover .card-button {
+    -webkit-transform: translate(-50%, 50%);
+    -ms-transform: translate(-50%, 50%);
+    transform: translate(-50%, 50%);
+    opacity: 0.7;
+    color: #ffef1085;
+  }
+  
+  .card-text {
+    color: #324922a6; /* Initial text color */
+    -webkit-transition: color 0.0 ease 0.0; /* Add a 0.5s delay to the text color transition */
+    transition: color 0.1s ease 0.0s;
+  }
+
+  .card:hover .card-text {
+    color: #187915;
+  }
+
+  .center-content-horizontally {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+  
+  
+  
